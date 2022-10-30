@@ -6,10 +6,13 @@
 Console.WriteLine("Input the Count of Array Elements");
 int CountElements = Convert.ToInt32(Console.ReadLine());
 string[] FirstArray = new string [CountElements];
+string[] SecondArray = new string [CountElements];
 
 FillFirstArray(FirstArray);
 PrintFirstArray(FirstArray);
 Console.WriteLine();
+Console.WriteLine();
+PrintSecondArray(FirstArray);
 
 void FillFirstArray(string[] FirstArray)
 {
@@ -30,4 +33,16 @@ void PrintFirstArray(string[] FirstArray)
     }
 }
 
-
+void PrintSecondArray(string[] FirstArray)
+{
+    int j = 0;
+    for (int i=0; i < CountElements; i++)
+    {
+        if(FirstArray[i].Length <= 3)
+        {
+            SecondArray[j] = FirstArray[i];
+            Console.Write($"{SecondArray[j]}; ");
+            j++;
+        }
+    }
+}
